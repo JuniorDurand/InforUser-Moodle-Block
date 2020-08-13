@@ -15,18 +15,18 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Contains the class for dashboard block
+ * Contains the class for userinfo block
  * 
- * @package block_dashboard
+ * @package block_userinfo
  * @copyright 2020 Grupo Saite
- * @author Vinicius Costa Castro <costacastrovinicius7@gmail.com>
+ * @author José Ribamar Durand <junior_durand@outlook.com>
  */
-class block_dashboard extends block_base {
+class block_userinfo extends block_base {
     /**
      * Init
      */
     public function init() {
-        $this->title = get_string("pluginname", "block_dashboard");
+        $this->title = get_string("pluginname", "block_userinfo");
     }
 
     /**
@@ -39,13 +39,12 @@ class block_dashboard extends block_base {
             return $this->content;
         }
 
-        $renderer = $this->page->get_renderer("block_dashboard");
-        //var_dump($renderer);
+        $renderer = $this->page->get_renderer("block_userinfo");
+
         $this->content = (object) array(
             "text" => $renderer->render(),
         );
 
-        //var_dump($this->content);
         return $this->content;
     }
 

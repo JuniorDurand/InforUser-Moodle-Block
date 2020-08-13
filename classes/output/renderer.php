@@ -1,17 +1,17 @@
 <?php
 
-namespace block_dashboard\output;
+namespace block_userinfo\output;
 
 use stdClass;
 use plugin_renderer_base;
-use block_dashboard\extras\utils;
+use block_userinfo\extras\utils;
 
 /**
- * Dashboard block renderer
+ * userinfo block renderer
  * 
- * @package block_dashboard
+ * @package block_userinfo
  * @copyright 2020 Grupo Saite
- * @author Vinicius Costa Castro <costacastrovinicius7@gmail.com>
+ * @author José Ribamar Durand <junior_durand@outlook.com>
  */
 class renderer extends plugin_renderer_base {
     /**
@@ -20,27 +20,19 @@ class renderer extends plugin_renderer_base {
      * @return stdClass
      */
     public function export_for_template() {
-        global $USER;
-        global $DB;
-        $user = $DB->get_records('user');
+
 
         $templatecontext = new stdClass();
-        $templatecontext->courses = utils::get_courses();
-        $templatecontext->data = "muito loko";
-        var_dump($USER);
-        echo "<br>-------------------<br>";
-        var_dump($user);
-
-        //var_dump($templatecontext);
+        $templatecontext = utils::get_user_info();
         return $templatecontext;
     }
 
     /**
-     * Return the content for the block dashboard.
+     * Return the content for the block userinfo.
      * 
      * @return string HTML String
      */
     public function render() {
-        return $this->render_from_template("block_dashboard/main", $this->export_for_template());
+        return $this->render_from_template("block_userinfo/main", $this->export_for_template());
     }
 }

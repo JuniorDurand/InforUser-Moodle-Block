@@ -1,11 +1,5 @@
-<div class="row">
-  {{#courses}}
-    {{< core_course/coursecard }}
-      {{$coursename}}{{{fulname}}}{{/coursename}}
-    {{/ core_course/coursecard }}
-  {{/courses}}
-  {{^courses}}
-      <span>Sem cursos disponiveis</span>        
-  {{/courses}}
-  {{data}}
+<div class="container">
+    <h6>User: @{{user_name}}</h6> 
+    <p>Name: {{firstname}} {{lastname}}</p> 
+    <p>Email: {{email}}</p> 
 </div>
