@@ -1,0 +1,11 @@
+<div class="row">
+  {{#courses}}
+    {{< core_course/coursecard }}
+      {{$coursename}}{{{fulname}}}{{/coursename}}
+    {{/ core_course/coursecard }}
+  {{/courses}}
+  {{^courses}}
+      <span>Sem cursos disponiveis</span>        
+  {{/courses}}
+  {{data}}
+</div>
